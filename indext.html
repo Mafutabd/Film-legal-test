@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Film Legal Hub</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #f4f4f4;
+      color: #222;
+    }
+
+    header {
+      background: #222;
+      color: white;
+      padding: 25px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0 0 10px;
+    }
+
+    .search {
+      max-width: 600px;
+      margin: 25px auto;
+      display: flex;
+      gap: 10px;
+      padding: 0 20px;
+    }
+
+    .search input {
+      flex: 1;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 16px;
+    }
+
+    .search button {
+      padding: 12px 20px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    .movies {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+    .movie {
+      background: white;
+      border-radius: 10px;
+      padding: 15px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .poster {
+      height: 280px;
+      background: #ddd;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #666;
+      margin-bottom: 15px;
+    }
+
+    .movie h2 {
+      font-size: 20px;
+    }
+
+    .movie p {
+      line-height: 1.5;
+      color: #555;
+    }
+
+    .button {
+      display: inline-block;
+      background: #222;
+      color: white;
+      padding: 10px 15px;
+      text-decoration: none;
+      border-radius: 6px;
+      margin-top: 10px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      margin-top: 40px;
+      background: #222;
+      color: white;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>🎬 Film Legal Hub</h1>
+    <p>Temukan film yang tersedia secara legal untuk ditonton atau diunduh.</p>
+  </header>
+
+  <div class="search">
+    <input type="text" id="searchInput" placeholder="Cari judul film...">
+    <button onclick="searchMovie()">Cari</button>
+  </div>
+
+  <main class="container">
+    <h2>Film Legal</h2>
+
+    <div class="movies">
+
+      <div class="movie">
+        <div class="poster">Poster Film</div>
+        <h2>Contoh Film Domain Publik</h2>
+        <p>
+          Contoh film yang dapat ditonton atau diunduh
+          melalui sumber yang menyediakan konten secara legal.
+        </p>
+
+        <a
+          class="button"
+          href="https://archive.org/"
+          target="_blank"
+          rel="noopener">
+          Sumber Legal
+        </a>
+      </div>
+
+      <div class="movie">
+        <div class="poster">Poster Film</div>
+        <h2>Film Klasik</h2>
+        <p>
+          Koleksi film klasik dari sumber legal dan
+          domain publik.
+        </p>
+
+        <a
+          class="button"
+          href="https://archive.org/"
+          target="_blank"
+          rel="noopener">
+          Sumber Legal
+        </a>
+      </div>
+
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2026 Film Legal Hub</p>
+    <p>Hanya menyediakan tautan ke sumber film yang legal.</p>
+  </footer>
+
+  <script>
+    function searchMovie() {
+      const input = document.getElementById("searchInput");
+      const keyword = input.value.toLowerCase();
+
+      const movies = document.querySelectorAll(".movie");
+
+      movies.forEach(function(movie) {
+        const title = movie.querySelector("h2").textContent.toLowerCase();
+
+        if (title.includes(keyword)) {
+          movie.style.display = "block";
+        } else {
+          movie.style.display = "none";
+        }
+      });
+    }
+  </script>
+
+</body>
+</html>
